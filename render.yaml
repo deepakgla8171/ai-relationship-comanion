@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: ai-relationship-companion-server
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: AI_PROVIDER
+        value: demo
+      - key: AI_MODEL
+        value: demo-relationship-v1
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: CLIENT_URL
+        value: https://your-app.vercel.app
+      - key: MONGODB_URI
+        sync: false
+      - key: REQUIRE_EXTERNAL_AI_CONSENT
+        value: "true"
+      - key: MAX_UPLOAD_SIZE_MB
+        value: "5"
+      - key: MAX_CONTEXT_MESSAGES
+        value: "15"
+      - key: DATA_RETENTION_DAYS
+        value: "30"

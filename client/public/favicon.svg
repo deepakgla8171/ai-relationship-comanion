@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#a855f7;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="#0b0f19" stroke="url(#grad1)" stroke-width="3" />
+  <circle cx="50" cy="50" r="38" fill="url(#glow)" />
+  <!-- Stylized Heart + Orbit -->
+  <path d="M50 32 C45 22, 30 22, 25 32 C18 45, 35 62, 50 72 C65 62, 82 45, 75 32 C70 22, 55 22, 50 32 Z" 
+        fill="url(#grad1)" opacity="0.9" />
+  <!-- Tech nodes -->
+  <circle cx="34" cy="40" r="3" fill="#ffffff" />
+  <circle cx="66" cy="40" r="3" fill="#ffffff" />
+  <path d="M34 40 Q50 50 66 40" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.8" />
+</svg>
