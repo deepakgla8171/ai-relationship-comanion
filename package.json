@@ -1,12 +1,26 @@
 {
-
-  "keywords": [
-    "ai",
-    "relationship-companion",
-    "whatsapp-parser",
-    "hinglish",
-    "sentiment-analysis"
-  ],
-  "author": "AI Relationship Companion Team",
-  "license": "MIT"
+    "name": "ai-relationship-companion",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Full-stack AI Relationship Companion with WhatsApp chat parsing, emotion analysis, and empathetic companion chat",
+    "scripts": {
+        "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+        "dev": "node scripts/dev.js",
+        "dev:server": "npm --prefix server run dev",
+        "dev:client": "npm --prefix client run dev",
+        "build": "npm --prefix client run build",
+        "start": "npm --prefix server start",
+        "test": "npm --prefix server test",
+        "test:parser": "npm --prefix server run test:parser",
+        "test:server": "npm --prefix server test"
+    },
+    "keywords": [
+        "ai",
+        "relationship-companion",
+        "whatsapp-parser",
+        "hinglish",
+        "sentiment-analysis"
+    ],
+    "author": "AI Relationship Companion Team",
+    "license": "MIT"
 }
