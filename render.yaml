@@ -23,8 +23,7 @@ services:
       - key: CLIENT_URL
         value: https://your-app.vercel.app
       - key: MONGODB_URI
-        sync: false
-      - key: REQUIRE_EXTERNAL_AI_CONSENT
+      
         value: "true"
       - key: MAX_UPLOAD_SIZE_MB
         value: "5"
