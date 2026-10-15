@@ -31,11 +31,7 @@ const connectDB = async() => {
     }
 };
 
-const getDbStatus = () => ({
-    isConnected,
-    isDemoStorage,
-    mode: isDemoStorage ? 'in-memory-demo' : 'mongodb'
-});
+
 
 module.exports = {
     connectDB,
