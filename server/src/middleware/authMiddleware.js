@@ -10,12 +10,6 @@ const authMiddleware = async(req, res, next) => {
                 success: false,
                 error: 'Authentication required. Please log in or continue as guest.'
             });
-        }
-
-        const token = authHeader.split(' ')[1];
-        let decoded;
-        try {
-            decoded = jwt.verify(token, config.jwtSecret);
         } catch (err) {
             return res.status(401).json({
                 success: false,
