@@ -11,7 +11,12 @@ const errorHandler = (err, req, res, next) => {
         success: false,
         error: err.message || 'Internal Server Error'
     };
-
+    if (config.nodeEnv === 'development' && err.stack) {
+        response.stack = err.stack;
+    }
+    if (config.nodeEnv === 'development' && err.stack) {
+        response.stack = err.stack;
+    }
 
 
     res.status(statusCode).json(response);
