@@ -1,9 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const helmet = require('helmet');
-const config = require('./config/env');
-const { generalLimiter } = require('./middleware/rateLimiter');
-const errorHandler = require('./middleware/errorHandler');
+
 
 // Route imports
 const healthRoutes = require('./routes/healthRoutes');
@@ -20,18 +17,18 @@ app.use(helmet());
 
 // Cross-Origin Resource Sharing
 app.use(cors({
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps, curl, or Postman)
-    if (!origin) return callback(null, true);
-    // Allow configured client URL or localhost in development
-    if (config.nodeEnv === 'development' || origin === config.clientUrl || origin.startsWith('http://localhost:')) {
-      return callback(null, true);
-    }
-    return callback(null, true); // Permissive for initial deploy/preview, can be locked down
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+    origin: (origin, callback) => {
+        // Allow requests with no origin (like mobile apps, curl, or Postman)
+        if (!origin) return callback(null, true);
+        // Allow configured client URL or localhost in development
+        if (config.nodeEnv === 'development' || origin === config.clientUrl || origin.startsWith('http://localhost:')) {
+            return callback(null, true);
+        }
+        return callback(null, true); // Permissive for initial deploy/preview, can be locked down
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Body Parsers
@@ -51,10 +48,10 @@ app.use('/api/settings', settingsRoutes);
 
 // 404 Handler for undefined API routes
 app.use('/api/*', (req, res) => {
-  res.status(404).json({
-    success: false,
-    error: `API route not found: ${req.method} ${req.originalUrl}`
-  });
+    res.status(404).json({
+        success: false,
+        error: `API route not found: ${req.method} ${req.originalUrl}`
+    });
 });
 
 // Centralized Error Handling
