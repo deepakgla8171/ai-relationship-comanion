@@ -2,7 +2,26 @@ const rateLimit = require('express-rate-limit');
 
 // General API rate limiter
 
-
+const generalLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 300, // Limit each IP to 300 requests per 15 min window
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: {
+        success: false,
+        error: 'Too many requests from this IP. Please try again after a few minutes.'
+    }
+});
+const generalLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 300, // Limit each IP to 300 requests per 15 min window
+    standardHeaders: true,
+    legacyHeaders: false,
+    message: {
+        success: false,
+        error: 'Too many requests from this IP. Please try again after a few minutes.'
+    }
+});
 // Stricter limiter for AI endpoints to prevent abuse / runaway costs
 const aiLimiter = rateLimit({
     windowMs: 1 * 60 * 1000, // 1 minute
