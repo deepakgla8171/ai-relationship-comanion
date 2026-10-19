@@ -15,8 +15,12 @@
         "test:server": "npm --prefix server test"
     },
     "keywords": [
-            "ai",
-            "relationship-companion",
-            "whatsapp-parser",
-            "hinglish",
-            "sentiment-analysis"
+        "ai",
+        "relationship-companion",
+        "whatsapp-parser",
+        "hinglish",
+        "sentiment-analysis"
+    ],
+    "author": "AI Relationship Companion Team",
+    "license": "MIT"
+}
