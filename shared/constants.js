@@ -15,7 +15,7 @@ const EMOTION_LABELS = [
 
 const COMPANION_LANGUAGES = ['Hinglish', 'English', 'Hindi'];
 
-const COMPANION_TONES = ['Warm', 'Friendly', 'Calm', 'Supportive'];
+
 
 const MAX_UPLOAD_SIZE_BYTES = 5 * 1024 * 1024; // 5 MB
 
