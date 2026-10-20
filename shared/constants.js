@@ -2,7 +2,16 @@
  * Shared constants between client and server
  */
 
-
+const EMOTION_LABELS = [
+    'Happy',
+    'Sad',
+    'Frustrated',
+    'Worried',
+    'Affectionate',
+    'Neutral',
+    'Mixed',
+    'Unclear'
+];
 
 const COMPANION_LANGUAGES = ['Hinglish', 'English', 'Hindi'];
 
