@@ -13,7 +13,7 @@ const EMOTION_LABELS = [
     'Unclear'
 ];
 
-
+const COMPANION_LANGUAGES = ['Hinglish', 'English', 'Hindi'];
 
 const COMPANION_TONES = ['Warm', 'Friendly', 'Calm', 'Supportive'];
 
