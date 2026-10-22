@@ -6,7 +6,8 @@ const startServer = async() => {
     console.log('✨ Starting AI Relationship Companion Server...');
 
     // Initialize DB or Demo store
-
+    await connectDB();
+    const dbStatus = getDbStatus();
 
     const server = app.listen(config.port, () => {
         console.log(`\n======================================================`);
