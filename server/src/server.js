@@ -20,7 +20,13 @@ const startServer = async() => {
     });
 
     // Graceful shutdown handling
-
+    const shutdown = () => {
+        console.log('\n🛑 Graceful shutdown initiated. Closing HTTP server...');
+        server.close(() => {
+            console.log('HTTP server closed.');
+            process.exit(0);
+        });
+    };
 
     process.on('SIGINT', shutdown);
     process.on('SIGTERM', shutdown);
