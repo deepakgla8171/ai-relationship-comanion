@@ -28,7 +28,8 @@ const startServer = async() => {
         });
     };
 
-
+    process.on('SIGINT', shutdown);
+    process.on('SIGTERM', shutdown);
 };
 
 if (require.main === module) {
