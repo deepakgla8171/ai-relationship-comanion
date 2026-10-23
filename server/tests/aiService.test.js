@@ -21,7 +21,7 @@ describe('AI Emotion Analysis and Companion Service Suite', () => {
         const analysis = await analyzeConversation({
             messages: sampleMessages,
             participants: ['Priya', 'Deepak'],
-
+            userConsentGranted: false
         });
 
         assert.ok(analysis);
