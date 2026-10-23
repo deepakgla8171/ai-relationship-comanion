@@ -56,33 +56,33 @@ describe('AI Emotion Analysis and Companion Service Suite', () => {
             { content: 'Prefers gentle reassurance when overwhelmed at office' }
         ];
 
-        const result = await generateCompanionResponse({
-            userMessage: 'Office mein kaam ka load kaafi zyada ho gaya hai.',
+
+        userMessage: 'Office mein kaam ka load kaafi zyada ho gaya hai.',
             memories,
             language: 'Hinglish',
             tone: 'Calm',
             userConsentGranted: false
-        });
-
-        assert.ok(result.reply);
-        assert.ok(result.reply.includes('Prefers gentle reassurance'));
     });
 
-    it('should switch correctly between Hinglish, Hindi, and English', async() => {
-        const enResult = await generateCompanionResponse({
-            userMessage: 'Hi there!',
-            language: 'English',
-            tone: 'Friendly',
-            userConsentGranted: false
-        });
-        assert.ok(enResult.reply.includes('AI Relationship Companion'));
+    assert.ok(result.reply);
+    assert.ok(result.reply.includes('Prefers gentle reassurance'));
+});
 
-        const hiResult = await generateCompanionResponse({
-            userMessage: 'Namaste!',
-            language: 'Hindi',
-            tone: 'Warm',
-            userConsentGranted: false
-        });
-        assert.ok(hiResult.reply.includes('AI रिलेशनशिप साथी'));
-    });
+it('should switch correctly between Hinglish, Hindi, and English', async() => {
+const enResult = await generateCompanionResponse({
+    userMessage: 'Hi there!',
+    language: 'English',
+    tone: 'Friendly',
+    userConsentGranted: false
+});
+assert.ok(enResult.reply.includes('AI Relationship Companion'));
+
+const hiResult = await generateCompanionResponse({
+    userMessage: 'Namaste!',
+    language: 'Hindi',
+    tone: 'Warm',
+    userConsentGranted: false
+});
+assert.ok(hiResult.reply.includes('AI रिलेशनशिप साथी'));
+});
 });
