@@ -7,7 +7,7 @@ const {
     generateDemoCompanionReply
 } = require('../src/services/aiService');
 
-
+const { EMOTION_LABELS, AI_DISCLAIMER } = require('../../shared/constants');
 describe('AI Emotion Analysis and Companion Service Suite', () => {
     const sampleMessages = [
         { sender: 'Priya', text: 'Presentation review scheduled for today, thoda stressed feel ho raha hai.' },
