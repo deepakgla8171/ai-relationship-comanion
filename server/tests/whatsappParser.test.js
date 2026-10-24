@@ -8,7 +8,7 @@ describe('WhatsApp Chat Parser Suite', () => {
 12/05/2023, 14:31 - Bob: Hey Alice! How are you?
 12/05/2023, 14:32 - Alice: Doing great, thank you.`;
 
-
+        const parsed = parseWhatsAppChat(raw);
 
         assert.strictEqual(parsed.parsedMessageCount, 3);
         assert.deepStrictEqual(parsed.participants, ['Alice', 'Bob']);
