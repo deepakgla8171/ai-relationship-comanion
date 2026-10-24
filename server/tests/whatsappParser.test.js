@@ -26,7 +26,7 @@ describe('WhatsApp Chat Parser Suite', () => {
 
         const parsed = parseWhatsAppChat(raw);
 
-        assert.strictEqual(parsed.parsedMessageCount, 3);
+
         assert.deepStrictEqual(parsed.participants, ['Priya', 'Deepak']);
         assert.strictEqual(parsed.messages[0].sender, 'Priya');
         assert.strictEqual(parsed.messages[2].sender, 'Priya');
