@@ -34,7 +34,7 @@ describe('WhatsApp Chat Parser Suite', () => {
 
     it('should parse iOS bracketed timestamp format', () => {
         const raw = `[12/05/2023, 14:30:15] Alice: Hi from iOS!
-
+[12/05/2023, 14:31:00] Bob: Awesome, looks clear.`;
 
         const parsed = parseWhatsAppChat(raw);
 
@@ -66,7 +66,7 @@ describe('WhatsApp Chat Parser Suite', () => {
         const raw = `
         12 / 05 / 2023, 11: 00 - Deepak: Important note: please check this link: https: //example.com/item?id=123:456`;
 
-            const parsed = parseWhatsAppChat(raw);
+        const parsed = parseWhatsAppChat(raw);
 
         assert.strictEqual(parsed.parsedMessageCount, 1);
         assert.strictEqual(parsed.messages[0].sender, 'Deepak');
