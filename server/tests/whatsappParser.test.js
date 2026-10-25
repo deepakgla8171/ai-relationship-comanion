@@ -34,7 +34,7 @@ describe('WhatsApp Chat Parser Suite', () => {
 
     it('should parse iOS bracketed timestamp format', () => {
         const raw = `[12/05/2023, 14:30:15] Alice: Hi from iOS!
-[12/05/2023, 14:31:00] Bob: Awesome, looks clear.`;
+
 
         const parsed = parseWhatsAppChat(raw);
 
@@ -44,12 +44,14 @@ describe('WhatsApp Chat Parser Suite', () => {
     });
 
     it('should correctly preserve multiline messages', () => {
-        const raw = `12/05/2023, 10:00 - Alice: Here are our action items:
-1. Finish the presentation
-2. Review the slide deck
-3. Send to team
-Let me know if you need help!
-12/05/2023, 10:05 - Bob: Got it!`;
+        const raw = `
+        12 / 05 / 2023, 10: 00 - Alice: Here are our action items:
+            1. Finish the presentation
+        2. Review the slide deck
+        3. Send to team
+        Let me know
+        if you need help!
+            12 / 05 / 2023, 10: 05 - Bob: Got it!`;
 
         const parsed = parseWhatsAppChat(raw);
 
@@ -61,9 +63,10 @@ Let me know if you need help!
     });
 
     it('should handle messages with multiple colons and URLs in the body', () => {
-        const raw = `12/05/2023, 11:00 - Deepak: Important note: please check this link: https://example.com/item?id=123:456`;
+        const raw = `
+        12 / 05 / 2023, 11: 00 - Deepak: Important note: please check this link: https: //example.com/item?id=123:456`;
 
-        const parsed = parseWhatsAppChat(raw);
+            const parsed = parseWhatsAppChat(raw);
 
         assert.strictEqual(parsed.parsedMessageCount, 1);
         assert.strictEqual(parsed.messages[0].sender, 'Deepak');
