@@ -1,8 +1,7 @@
 {
     "name": "ai-relationship-companion-server",
     "version": "1.0.0",
-    "description": "Backend API for AI Relationship Companion",
-    "main": "src/server.js",
+
     "scripts": {
         "start": "node src/server.js",
         "dev": "node --watch src/server.js",
