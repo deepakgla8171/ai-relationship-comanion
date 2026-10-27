@@ -19,8 +19,8 @@ const settingsRoutes = require('./routes/settingsRoutes');
 app.use(helmet());
 
 // Cross-Origin Resource Sharing
-
-origin: (origin, callback) => {
+app.use(cors({
+    origin: (origin, callback) => {
         // Allow requests with no origin (like mobile apps, curl, or Postman)
         if (!origin) return callback(null, true);
         // Allow configured client URL or localhost in development
