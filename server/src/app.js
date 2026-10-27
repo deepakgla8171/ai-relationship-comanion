@@ -13,7 +13,7 @@ const companionRoutes = require('./routes/companionRoutes');
 const memoryRoutes = require('./routes/memoryRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
 
-const app = express();
+
 
 // Security Headers
 app.use(helmet());
