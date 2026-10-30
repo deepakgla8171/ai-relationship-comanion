@@ -10,8 +10,7 @@ const healthRoutes = require('./routes/healthRoutes');
 const authRoutes = require('./routes/authRoutes');
 const chatRoutes = require('./routes/chatRoutes');
 const companionRoutes = require('./routes/companionRoutes');
-const memoryRoutes = require('./routes/memoryRoutes');
-const settingsRoutes = require('./routes/settingsRoutes');
+
 
 
 
