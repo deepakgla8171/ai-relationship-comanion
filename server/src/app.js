@@ -17,7 +17,7 @@ const settingsRoutes = require('./routes/settingsRoutes');
 
 // Security Headers
 
-
+app.use(helmet());
 // Cross-Origin Resource Sharing
 app.use(cors({
     origin: (origin, callback) => {
