@@ -27,7 +27,7 @@ app.use(cors({
         if (config.nodeEnv === 'development' || origin === config.clientUrl || origin.startsWith('http://localhost:')) {
             return callback(null, true);
         }
-        return callback(null, true); // Permissive for initial deploy/preview, can be locked down
+        // Permissive for initial deploy/preview, can be locked down
     },
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
