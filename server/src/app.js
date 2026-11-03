@@ -58,3 +58,5 @@ app.use('/api/*', (req, res) => {
 
 // Centralized Error Handling
 app.use(errorHandler);
+
+module.exports = app;
