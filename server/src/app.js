@@ -45,8 +45,7 @@ app.use('/api', generalLimiter);
 app.use('/api/health', healthRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/chats', chatRoutes);
-app.use('/api/companion/memories', memoryRoutes);
-app.use('/api/companion', companionRoutes);
+
 app.use('/api/settings', settingsRoutes);
 
 // 404 Handler for undefined API routes
