@@ -4,7 +4,10 @@ const request = require('supertest');
 const app = require('../src/app');
 
 describe('REST API Endpoints Integration Test Suite', () => {
-
+    let guestToken = '';
+    let guestUserId = '';
+    let uploadedChatId = '';
+    let createdMemoryId = '';
 
     it('GET /api/health should return 200 OK and valid health payload', async() => {
         const res = await request(app).get('/api/health');
