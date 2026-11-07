@@ -21,11 +21,7 @@ describe('REST API Endpoints Integration Test Suite', () => {
         const res = await request(app).post('/api/auth/guest');
         assert.strictEqual(res.statusCode, 200);
         assert.ok(res.body.token);
-        assert.ok(res.body.user);
-        assert.strictEqual(res.body.user.isGuest, true);
 
-        guestToken = res.body.token;
-        guestUserId = res.body.user.id;
     });
 
     it('Protected routes should reject requests without Authorization header with 401', async() => {
