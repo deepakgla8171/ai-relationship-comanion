@@ -9,20 +9,21 @@ const messageSubSchema = new mongoose.Schema({
 }, { _id: false });
 
 const analysisSubSchema = new mongoose.Schema({
-    analyzedAt: { type: Date, default: Date.now },
-    sentimentLabel: {
-        type: String,
-        enum: ['Happy', 'Sad', 'Frustrated', 'Worried', 'Affectionate', 'Neutral', 'Mixed', 'Unclear'],
-        default: 'Neutral'
+            analyzedAt: { type: Date, default: Date.now },
+
+            type: String,
+            enum: ['Happy', 'Sad', 'Frustrated', 'Worried', 'Affectionate', 'Neutral', 'Mixed', 'Unclear'],
+            default: 'Neutral'
+        },
+        possibleEmotionalTone: { type: String, default: 'Neutral and conversational' },
+        confidenceScore: { type: Number, min: 0, max: 1, default: 0.8 },
+        topics: [{ type: String }],
+        explicitCommunicationPreferences: [{ type: String }],
+        neutralSummary: { type: String },
+        suggestedResponses: [{ type: String }],
+        isDemoMode: { type: Boolean, default: true }
     },
-    possibleEmotionalTone: { type: String, default: 'Neutral and conversational' },
-    confidenceScore: { type: Number, min: 0, max: 1, default: 0.8 },
-    topics: [{ type: String }],
-    explicitCommunicationPreferences: [{ type: String }],
-    neutralSummary: { type: String },
-    suggestedResponses: [{ type: String }],
-    isDemoMode: { type: Boolean, default: true }
-}, { _id: false });
+    { _id: false });
 
 const importedConversationSchema = new mongoose.Schema({
     userId: {
