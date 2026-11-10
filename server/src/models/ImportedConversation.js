@@ -9,7 +9,7 @@ const messageSubSchema = new mongoose.Schema({
 }, { _id: false });
 
 const analysisSubSchema = new mongoose.Schema({
-
+    analyzedAt: { type: Date, default: Date.now },
     sentimentLabel: {
         type: String,
         enum: ['Happy', 'Sad', 'Frustrated', 'Worried', 'Affectionate', 'Neutral', 'Mixed', 'Unclear'],
