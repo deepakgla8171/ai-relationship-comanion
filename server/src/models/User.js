@@ -9,7 +9,10 @@ const userSchema = new mongoose.Schema({
         lowercase: true
     },
     password: {
-
+        type: String,
+        required: function() {
+            return !this.isGuest;
+        }
     },
     name: {
         type: String,
