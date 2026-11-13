@@ -35,7 +35,8 @@ app.use(cors({
 }));
 
 // Body Parsers
-
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Apply rate limiter to all API routes
 app.use('/api', generalLimiter);
