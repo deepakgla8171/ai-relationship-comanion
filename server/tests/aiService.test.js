@@ -61,7 +61,7 @@ describe('AI Emotion Analysis and Companion Service Suite', () => {
             memories,
             language: 'Hinglish',
             tone: 'Calm',
-            userConsentGranted: false
+
         });
 
         assert.ok(result.reply);
