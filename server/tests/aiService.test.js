@@ -58,7 +58,7 @@ describe('AI Emotion Analysis and Companion Service Suite', () => {
 
         const result = await generateCompanionResponse({
             userMessage: 'Office mein kaam ka load kaafi zyada ho gaya hai.',
-
+            memories,
             language: 'Hinglish',
             tone: 'Calm',
             userConsentGranted: false
