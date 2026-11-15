@@ -53,7 +53,7 @@ describe('AI Emotion Analysis and Companion Service Suite', () => {
 
     it('should take approved memories into account when formulating responses', async() => {
         const memories = [
-
+            { content: 'Prefers gentle reassurance when overwhelmed at office' }
         ];
 
         const result = await generateCompanionResponse({
