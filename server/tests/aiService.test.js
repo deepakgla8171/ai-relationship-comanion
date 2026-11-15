@@ -72,7 +72,8 @@ describe('AI Emotion Analysis and Companion Service Suite', () => {
         const enResult = await generateCompanionResponse({
             userMessage: 'Hi there!',
             language: 'English',
-
+            tone: 'Friendly',
+            userConsentGranted: false
         });
         assert.ok(enResult.reply.includes('AI Relationship Companion'));
 
