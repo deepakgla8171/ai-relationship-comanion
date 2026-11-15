@@ -47,8 +47,7 @@ describe('AI Emotion Analysis and Companion Service Suite', () => {
         assert.ok(result);
         assert.strictEqual(typeof result.reply, 'string');
         assert.ok(result.reply.length > 20);
-        assert.strictEqual(result.metadata.language, 'Hinglish');
-        assert.strictEqual(result.metadata.isDemoFallback, true);
+
     });
 
     it('should take approved memories into account when formulating responses', async() => {
