@@ -60,7 +60,8 @@ describe('AI Emotion Analysis and Companion Service Suite', () => {
             userMessage: 'Office mein kaam ka load kaafi zyada ho gaya hai.',
             memories,
             language: 'Hinglish',
-
+            tone: 'Calm',
+            userConsentGranted: false
         });
 
         assert.ok(result.reply);
