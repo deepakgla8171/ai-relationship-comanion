@@ -8,7 +8,9 @@ COPY package.json ./
 COPY server/package.json ./server/
 COPY client/package.json ./client/
 
-
+# Install server and client dependencies
+RUN cd server && npm install
+RUN cd client && npm install
 
 # Copy source code
 COPY shared/ ./shared/
