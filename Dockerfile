@@ -12,10 +12,7 @@ COPY client/package.json ./client/
 RUN cd server && npm install
 RUN cd client && npm install
 
-# Copy source code
-COPY shared/ ./shared/
-COPY server/ ./server/
-COPY client/ ./client/
+
 
 # Build client
 RUN cd client && npm run build
