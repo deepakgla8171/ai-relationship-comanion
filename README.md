@@ -2,7 +2,7 @@
 
 A private, full-stack web application designed for empathetic communication reflection, WhatsApp chat export analysis, and natural conversational practice in **Hinglish** and **English**.
 
-The companion is an **artificial intelligence assistant**, not a human partner or a clinical psychologist. It provides a safe, reflective space to understand communication patterns, practice empathy, and maintain user-controlled conversational preferences.
+
 
 ---
 
